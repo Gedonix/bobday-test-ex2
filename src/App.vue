@@ -1,28 +1,37 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <v-tabs background-color="red darken-4" centered dark>
+        <v-tab>НОВОСТИ</v-tab>
+        <v-tab>ОПРОСЫ</v-tab>
+        <v-tab>МАТЕРИАЛЫ</v-tab>
+        <v-tab>СЦЕНАРИЙ</v-tab>
+        <v-tab>НАЗНАЧЕНИЕ</v-tab>
+      </v-tabs>
+    </v-app-bar>
+
+    <v-main>
+      <v-container fluid class="grey lighten-5">
+        <tabs />
+        <test />
+        <quiz/>
+      </v-container>      
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Tabs from './components/Tabs.vue'
+import Test from './components/Test.vue'
+import Quiz from './components/Quiz.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
-</script>
+    Tabs,
+    Test,
+    Quiz,
+  },
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+};
+</script>
