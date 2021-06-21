@@ -1,4 +1,4 @@
-# bobday-ex2
+# TEST FOR BOBDAY COMPANY No2
 
 ## Project setup
 ```
