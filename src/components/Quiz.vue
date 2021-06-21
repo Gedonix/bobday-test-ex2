@@ -5,6 +5,8 @@
                 <v-col cols="1" class="pl-4">
                     <v-checkbox
                     class="ma-0 pa-0"
+                    v-model="checkbox"
+                    @click="checkUncheckAll"
                     hide-details />
                 </v-col>
                 <v-col cols="7">
@@ -53,6 +55,7 @@ import Question from './Question.vue'
 export default {
     data() {
         return {
+            checkbox: false,
             questions: [],
             dialog: false,
         }
@@ -83,6 +86,13 @@ export default {
         },
         closeModal() {
             this.dialog = false
+        },
+        checkUncheckAll() {
+            if(!this.checkbox){
+                this.questions = []
+            } else {
+                this.qList.forEach(q => this.questions.push(q.qid))
+            }         
         }
     }
 }
